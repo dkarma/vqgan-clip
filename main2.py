@@ -7,7 +7,6 @@ from vqgan_clip.helpers import *
 from vqgan_clip.inits import *
 from vqgan_clip.masking import *
 from vqgan_clip.optimizers import *
-from transformers.models.bert.modeling_bert import BertEmbeddings
 from urllib.request import urlopen
 from tqdm import tqdm
 import sys
@@ -17,6 +16,7 @@ from omegaconf import OmegaConf
 import taming.modules
 from taming.models import cond_transformer, vqgan
 
+#from taming.modules import misc
 import torch
 from torch import nn, optim
 from torch.nn import functional as F
@@ -24,7 +24,8 @@ from torchvision import transforms
 from torchvision.transforms import functional as TF
 from torch.cuda import get_device_properties
 torch.backends.cudnn.benchmark = False
-
+sys.path.insert(0,"/home/dkarma/.local/lib/python3.7/site-packages")
+from taming import modules
 from torch_optimizer import DiffGrad, AdamP, RAdam
 
 import clip
@@ -229,7 +230,7 @@ def watermark(filenamestring):
   #  TF.to_pil_image(out[0].cpu()).save(filenamestring, pnginfo=info)
     bg = Image.open(filenamestring)
     wm = Image.open('watermark.png')
-    bg.paste(wm, (231,246))
+    bg.paste(wm, (221,246))
     bg.save(filenamestring)
 
 def train(i):
