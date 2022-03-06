@@ -1,0 +1,31 @@
+
+2flast
+python3 main2.py -p "cash rules everything around me" -cd cpu -ckpt checkpoints/2Flast.ckpt -conf checkpoints/2Flast.yaml --output output_new/filename
+
+
+coco
+python3 main2.py -p "cash rules everything around me" -cd cpu -ckpt checkpoints/coco.ckpt -conf checkpoints/coco.yaml --output output_new/filename
+
+
+imagenet_f16_1024
+python3 main2.py -p "cash rules everything around me" -cd cpu -ckpt checkpoints/vqgan_imagenet_f16_1024.ckpt -conf checkpoints/vqgan_imagenet_f16_1024.yaml --output output_new/filename
+
+
+imagenet_f16_16384
+python3 main2.py -p "cash rules everything around me" -cd cpu -ckpt checkpoints/vqgan_imagenet_f16_16384.ckpt -conf checkpoints/vqgan_imagenet_f16_16384.yaml --output output_new/filename
+
+wiki
+python3 main2.py -p "cash rules everything around me" -cd cpu -ckpt checkpoints/wikiart_16384.ckpt -conf checkpoints/wikiart_16384.yaml --output output_new/filename
+
+faceshq
+python3 main2.py -p "cash rules everything around me" -cd cpu -ckpt checkpoints/faceshq.ckpt -conf checkpoints/faceshq.yaml --init-image output_new/cream_coco_2__50.png --output output_new/cream_coco_3
+
+#these are the checkpoints i downloaded. you may name them something different.
+
+checkpoints/2Flast.ckpt                  checkpoints/faceshq.yaml  checkpoints/vqgan_imagenet_f16_1024.yaml
+checkpoints/2Flast.yaml                  checkpoints/vqgan_imagenet_f16_16384.ckpt
+checkpoints/512x512_diffusion.pt         checkpoints/vqgan_imagenet_f16_16384.yaml
+checkpoints/coco.ckpt                    checkpoints/wikiart_16384.ckpt
+checkpoints/coco.yaml                    checkpoints/wikiart_16384.yaml
+
+
